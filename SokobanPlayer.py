@@ -37,7 +37,7 @@ class Sokoban:
         if self.level_no==1:
             print("<space>: restart level     <n>: next level     <backspace>: go to main screen     <esc>: exit")
         elif self.level_no==2:
-            print("<space>: restart level     <b>: previous level     <backspace>: go to main screen     <esc>: exit")
+            print("<space>: restart level     <p>: previous level     <backspace>: go to main screen     <esc>: exit")
         self.is_goal_reached()
 
 
@@ -388,7 +388,7 @@ win.bind("<Left>", left)
 win.bind("<Right>", right)
 
 win.bind("n", next_level)
-win.bind("b", previous_level)
+win.bind("p", previous_level)
 win.bind("<BackSpace>", go_to_main_screen)
 win.bind("<space>", restart_game)
 win.bind("<Escape>", exit_game)

@@ -59,7 +59,7 @@ def choose_selection(event):
         os.system("python3 SokobanPlayer.py")
     elif obj.return_selection()==1:
         win.destroy()
-        os.system("python3 SokobanAI.py")
+        os.system("python3 SokobanAI.py 1")
     
 
 def exit_main_screen(event):
