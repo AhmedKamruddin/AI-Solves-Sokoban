@@ -34,10 +34,7 @@ class Sokoban:
             print('')
         print('')
         print('')
-        if self.level_no==1:
-            print("<space>: restart level     <n>: next level     <backspace>: go to main screen     <esc>: exit")
-        elif self.level_no==2:
-            print("<space>: restart level     <p>: previous level     <backspace>: go to main screen     <esc>: exit")
+        print("<space>: restart level     <n>: next level     <b>:previous level     <backspace>: go to main screen     <esc>: exit")
         self.is_goal_reached()
 
 
@@ -64,6 +61,36 @@ class Sokoban:
         # C ◆ Box@Goal
 
         if level_no==1:
+            self.level=[['W', 'W', 'W', 'W', 'W', 'W'],
+                        ['W', 'W', 'W', ' ', ' ', 'W'],
+                        ['W', ' ', 'B', 'G', ' ', 'W'],
+                        ['W', ' ', 'B', 'G', ' ', 'W'],
+                        ['W', 'P', ' ', ' ', 'W', 'W'],
+                        ['W', 'W', 'W', 'W', 'W', 'W']]
+        elif level_no==2:    
+            self.level=[['W', 'W', 'W', 'W', 'W', 'W', 'W'],
+                        ['W', 'G', 'W', 'W', 'W', 'G', 'W'],
+                        ['W', ' ', 'B', 'P', 'B', ' ', 'W'],
+                        ['W', ' ', ' ', ' ', ' ', ' ', 'W'],
+                        ['W', ' ', 'B', ' ', 'B', ' ', 'W'],
+                        ['W', 'G', 'W', 'W', 'W', 'G', 'W'],
+                        ['W', 'W', 'W', 'W', 'W', 'W', 'W']]
+        elif level_no==3:    
+            self.level=[['W', 'W', 'W', 'W', 'W', 'W', 'W'],
+                        ['W', 'G', ' ', 'W', ' ', 'P', 'W'],
+                        ['W', ' ', ' ', 'W', 'B', ' ', 'W'],
+                        ['W', 'G', ' ', ' ', 'B', ' ', 'W'],
+                        ['W', ' ', ' ', 'W', 'B', ' ', 'W'],
+                        ['W', 'G', ' ', 'W', ' ', ' ', 'W'],
+                        ['W', 'W', 'W', 'W', 'W', 'W', 'W']]
+        elif level_no==4:
+            self.level=[['W', 'W', 'W', 'W', 'W', 'W', 'W', 'W'],
+                        ['W', 'G', 'G', 'G', ' ', 'W', 'W', 'W'],
+                        ['W', ' ', 'G', ' ', 'B', ' ', ' ', 'W'],
+                        ['W', ' ', ' ', 'B', 'B', 'B', ' ', 'W'],
+                        ['W', 'W', 'W', 'W', ' ', ' ', 'P', 'W'],
+                        ['W', 'W', 'W', 'W', 'W', 'W', 'W', 'W']]
+        elif level_no==5:
             self.level=[[' ', ' ', 'W', 'W', 'W', 'W', 'W', ' '],
                         ['W', 'W', 'W', ' ', ' ', ' ', 'W', ' '],
                         ['W', 'G', 'P', 'B', ' ', ' ', 'W', ' '],
@@ -73,7 +100,7 @@ class Sokoban:
                         ['W', 'B', ' ', 'C', 'B', 'B', 'G', 'W'],
                         ['W', ' ', ' ', ' ', 'G', ' ', ' ', 'W'],
                         ['W', 'W', 'W', 'W', 'W', 'W', 'W', 'W']]
-        elif level_no==2:
+        elif level_no==6:
             self.level=[[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'W', 'W', 'W', 'W', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'W', ' ', ' ', 'W', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
                         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'W', ' ', ' ', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -93,8 +120,7 @@ class Sokoban:
                         ['W', 'W', ' ', 'W', 'W', ' ', ' ', 'B', ' ', ' ', 'W', ' ', 'B', ' ', 'W', ' ', ' ', 'W', 'G', 'G', 'G', 'G', 'C', 'G', 'W', 'W', 'W', ' ', ' '],
                         ['W', ' ', ' ', ' ', ' ', 'B', ' ', 'W', 'W', 'W', 'W', ' ', ' ', ' ', 'W', ' ', 'G', 'G', 'G', 'G', 'C', 'G', 'W', 'W', 'W', ' ', ' ', ' ', ' '],
                         ['W', ' ', ' ', ' ', 'W', ' ', ' ', 'W', ' ', ' ', 'W', ' ', ' ', 'W', ' ', ' ', 'G', 'G', 'C', 'G', 'W', 'W', 'W', ' ', ' ', ' ', ' ', ' ', ' '],
-                        ['W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', ' ', ' ', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-                        ]
+                        ['W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', ' ', ' ', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],]
         self.x, self.y=self.get_current_position()
         
 
@@ -320,7 +346,6 @@ class Sokoban:
             elif self.level[self.x][self.y+2] in ['W', 'B', 'C']:   #If tile right of Box@Goal is a Wall, Box, or Box@Goal
                 return False
 
-
 game=Sokoban(1)  
 
 win = tkinter.Tk()
@@ -352,16 +377,20 @@ def right(event):
         game.display()
 
 def next_level(event):
-    os.system("clear")
-    game.lock_movement=0
-    game.update_level(2)
-    game.display()
+    if game.level_no!=6:
+        os.system("clear")
+        game.lock_movement=0
+        game.level_no+=1
+        game.update_level(game.level_no)
+        game.display()
 
 def previous_level(event):
-    os.system("clear")
-    game.lock_movement=0
-    game.update_level(1)
-    game.display()
+    if game.level_no!=1:
+        os.system("clear")
+        game.lock_movement=0
+        game.level_no-=1
+        game.update_level(game.level_no)
+        game.display()
 
 def go_to_main_screen(event):
     win.destroy()
@@ -388,7 +417,7 @@ win.bind("<Left>", left)
 win.bind("<Right>", right)
 
 win.bind("n", next_level)
-win.bind("p", previous_level)
+win.bind("b", previous_level)
 win.bind("<BackSpace>", go_to_main_screen)
 win.bind("<space>", restart_game)
 win.bind("<Escape>", exit_game)
