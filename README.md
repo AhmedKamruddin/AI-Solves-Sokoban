@@ -8,6 +8,12 @@ To start the game
 ```
 python3 MainScreen.py
 ```
+▩ - Box  
+☖  - Player  
+▢ - Wall  
+•   - Goal  
+◆ - Box at Goal   
+
 ## Screenshots
 ![image](https://github.com/AhmedKamruddin/Solving-Sokoban-Using-AI/assets/98866395/14eb86e9-4d9e-4f5b-b27d-de2ab87fb3cd)  
 
