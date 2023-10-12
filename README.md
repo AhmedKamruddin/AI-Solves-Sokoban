@@ -8,9 +8,9 @@ To start the game
 ```
 python3 MainScreen.py
 ```
-▩ - Box  
+▩ - Wall
 ☖  - Player  
-▢ - Wall  
+▢ - Box  
 •   - Goal  
 ◆ - Box at Goal   
 
