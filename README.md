@@ -8,7 +8,7 @@ To start the game
 ```
 python3 MainScreen.py
 ```
-▩ - Wall
+▩ - Wall  
 ☖  - Player  
 ▢ - Box  
 •   - Goal  
